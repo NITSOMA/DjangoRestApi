@@ -12,7 +12,7 @@ from celery.result import AsyncResult
 @api_view(['POST'])
 def add_books(request):
     """
-    Function responds to website HTTP post request.
+    Function responds to website HTTP POST request.
     Serializes data, returns appropriate status depend on validation.
 
     """
@@ -30,7 +30,7 @@ def add_books(request):
 @api_view(['GET', 'PUT'])
 def book_info(request, book_id):
     """
-    Function responds to website Http GET or POST request
+    Function responds to website HTTP GET or POST request
     Function gets extra param: book_id: str
     Depend on data existence and request method updates or returns serialized data
     """
@@ -76,11 +76,11 @@ def appraisal_request(request):
 @api_view()
 def appraisal_request_info(request, request_id):
     """
-        Function responds to website Http GET request
+        Function responds to website HTTP GET request
         Function gets extra param: request_id: int
         Depend on background task results
-        updates and saves and returns appraisal_request data
-        if success returns url where client can check requested data
+        updates, saves and returns appraisal_request data
+        if success, returns url where client can check requested data
 
     """
     requested_info = AppraisalRequest.objects.get(id=request_id)

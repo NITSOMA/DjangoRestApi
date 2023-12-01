@@ -56,42 +56,46 @@ project consists of three component
       $ python manage.py migrate
        ```
 
-* #### Run It
-    runserver 
+  * #### Run It
+      runserver 
+      ```bash
+          $ python manage.py runserver
+      ```
+    pull redis image and run redis through docker
     ```bash
-        $ python manage.py runserver
+        $ docker run -d -p 6379:6379 redis
     ```
-  pull redis image and run redis through docker
-  ```bash
-      $ docker run -d -p 6379:6379 redis
-  ```
-  run celery worker
-  ```bash
-        $ celery -A BOOKS worker loglevel=info
+    in case you don't use docker you can run redis server 
+    ```bash
+          $ redis-server
     ```
-  run celery beat 
-  ```bash
-      $ celery -A BOOKS beat loglevel=info
-  ```
+    run celery worker
+    ```bash
+          $ celery -A BOOKS worker loglevel=info
+      ```
+    run celery beat 
+    ```bash
+        $ celery -A BOOKS beat loglevel=info
+    ```
 
-   ### You can now access the server
-   for post request, add data of book 
-  ```
-       http://localhost:8000/api/books
-   ```
-   for get or put request. get or update info of particular book, by book_id
-  ```
-       http://localhost:8000/api/books/book_id
-   ```
-   for post request. post desire url to scrape 
+     ### You can now access the server
+     for post request, add data of book 
+    ```
+         http://localhost:8000/api/books
+     ```
+     for get or put request. get or update info of particular book, by book_id
+    ```
+         http://localhost:8000/api/books/book_id
+     ```
+     for post request. post desire url to scrape 
                     
-   ```
-       http://localhost:8000/api/appraisal_request
-   ```
-  for get request. get appraisal_request info 
-   ```
-       http://localhost:8000/api/appraisal_request/request_id
-   ```
+     ```
+         http://localhost:8000/api/appraisal_request
+     ```
+    for get request. get appraisal_request info 
+     ```
+         http://localhost:8000/api/appraisal_request/request_id
+     ```
         
                
 
