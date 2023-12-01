@@ -9,8 +9,8 @@ headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleW
 
 def get_id(url):
     """
-    Function takes one parameter url(str)
-    Uses for loop to capture id-first appearance group of numbers
+    Function takes one parameter url: str
+    Uses for loop to capture book_id-first appearance group of numbers
     once numeric chars ends loop must brake and don't collect other numerics chars
     """
     num = 0
@@ -26,7 +26,7 @@ def get_id(url):
 
 def collect_data(url):
     """
-    Function collects data from target webpage (function gets  parameter url str)
+    Function collects data from target webpage (function gets  parameter url: str)
     Function uses requests and beautifulsoup for get data and parse it
     Returns dict full of desired data
     """
@@ -46,7 +46,6 @@ def collect_data(url):
     return books
 
 
-
 def add_requested_data(url):
     """
     Function is responsible for reach api
@@ -62,7 +61,6 @@ def add_requested_data(url):
     elif response.status_code == 200:
         requests.put(f'{home_url}{book_id}/', data=books)
     return f'{home_url}{book_id}/'
-
 
 
 def scheduled_add_data():

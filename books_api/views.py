@@ -24,9 +24,6 @@ def add_books(request):
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-
 @api_view(['GET', 'PUT'])
 def book_info(request, book_id):
     """
@@ -70,7 +67,6 @@ def appraisal_request(request):
     url.request_id = t.id
     url.save()
     return HttpResponseRedirect(reverse('books_api:request_info', kwargs={'request_id': url.id}))
-
 
 
 @api_view()
