@@ -63,8 +63,8 @@ def appraisal_request(request):
     before its finishes. (just to show what happens in case background task
     needs more time before its done.
     """
-    t = add_data.delay(url.url, duration=10)
-    url.request_id = t.id
+    task = add_data.delay(url.url, duration=10)
+    url.request_id = task.id
     url.save()
     return HttpResponseRedirect(reverse('books_api:request_info', kwargs={'request_id': url.id}))
 
