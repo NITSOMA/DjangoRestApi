@@ -3,8 +3,7 @@ import requests
 import random
 
 home_url = 'http://127.0.0.1:8000/api/books/'
-headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)"
-                         "Chrome/119.0.0.0 Safari/537.36X-Amzn-Trace-Id" "Root=1-654e35df-7e84ab2278a90c197dab1b82"}
+headers = {"user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"}
 
 
 def get_id(url):
