@@ -48,17 +48,11 @@ project consists of three component
       ```bash
       pip install -r requirements.txt
       ```
-      #### Make migrations and migrate 
-    
-      ```bash
-      python manage.py makemigrations
-      python manage.py migrate
-       ```
 
   * ### Run It
       ### keep it in mind
   * each command need to run in new terminal
-  * each time you open new terminal need to  activate virtual environment
+  * each time you open new terminal need to be activated virtual environment
       ### Runserver
       ```bash
       python manage.py runserver
@@ -87,7 +81,7 @@ project consists of three component
      ```
      for get or put request. get or update info of particular book, by book_id
     ```
-         http://localhost:8000/api/books/book_id
+         http://localhost:8000/api/books/<book_id>
      ```
      for post request. post desire url to scrape 
                     
@@ -96,7 +90,7 @@ project consists of three component
      ```
     for get request. get appraisal_request info 
      ```
-         http://localhost:8000/api/appraisal_request/request_id
+         http://localhost:8000/api/appraisal_request/<request_id>
      ```
         
                 
