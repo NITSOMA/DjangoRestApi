@@ -25,21 +25,21 @@ project consists of three component
 
 ## Installation
 * first ensure you have python globally installed in your computer. If not, you can get python [here](https://www.python.org").
-* create virtual environment
-    ```bash
-      $ python -m venv env
-        
-    ```
+
   * Then, clone this repository to your computer
    ```bash
     $ git clone https://github.com/NITSOMA/DjangoRestApi.git
     ```
 
-* #### Dependencies
   * move into cloned repository
       ```bash
           $ cd DjangoRestApi
       ```
+  * create virtual environment
+    ```bash
+      $ python -m venv env
+        
+    ```
   * activate virtual environment:
       ```bash
          $ source env/bin/activate
@@ -58,7 +58,7 @@ project consists of three component
   * ### Run It
       ### keep it in mind
   * each command need to run in new terminal
-  * each time you open new terminal need to activate virtual environment
+  * each time you open new terminal need to  activate virtual environment
       ### Runserver
       ```bash
           $ python manage.py runserver
@@ -73,11 +73,11 @@ project consists of three component
     ```
     run celery worker
     ```bash
-          $ celery -A BOOKS worker loglevel=info
+          $ celery -A BOOKS worker --loglevel=info
       ```
     run celery beat 
     ```bash
-        $ celery -A BOOKS beat loglevel=info
+        $ celery -A BOOKS beat --loglevel=info
     ```
 
      ### You can now access the server
