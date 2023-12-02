@@ -27,8 +27,8 @@ project consists of three component
 * first ensure you have python globally installed in your computer. If not, you can get python [here](https://www.python.org").
 * create virtual environment
     ```bash
-      python -m venv env
-        $ 
+      $ python -m venv env
+        
     ```
   * Then, clone this repository to your computer
    ```bash
