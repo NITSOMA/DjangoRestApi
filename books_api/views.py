@@ -67,6 +67,7 @@ def appraisal_request(request):
     url.request_id = task.id
     url.save()
     return HttpResponseRedirect(reverse('books_api:request_info', kwargs={'request_id': url.id}))
+    
 
 
 @api_view()
@@ -83,7 +84,7 @@ def appraisal_request_info(request, request_id):
     task = AsyncResult(id=requested_info.request_id)
     requested_info.update_status('IN PROGRESS')
     requested_info.requested_info = 'wait for info'
-    requested_info.save()
+
     while not task.ready():
         serializer = AppraisalRequestSerializer(requested_info)
         return Response(serializer.data)
@@ -94,8 +95,13 @@ def appraisal_request_info(request, request_id):
             requested_info.save()
             serializer = AppraisalRequestSerializer(requested_info)
             return Response(serializer.data)
-        except Exception:
+        except Exception as ex:
+            if not requested_info.url.startswith("https://www.goodreads.com/book/show/"):
+                requested_info.requested_info = f'Occurred an Error - wrong url! try again'
+            else:
+                requested_info.requested_info = f'Occurred an Error - {ex}! try again'
             requested_info.update_status('FAILURE')
-            requested_info.more_info = 'wrong url'
+            requested_info.save()
             serializer = AppraisalRequestSerializer(requested_info)
             return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
+    
