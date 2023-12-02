@@ -1,3 +1,59 @@
+# DjangoRestApi
+Project written in Django used django rest framework. 
+it is small project for people who would like to see easy
+example of integration django, redis and celery.
+project consists of three component
+
+#### scrapper
+#### worker 
+#### backand 
+
+
+* client can reach our api and through api request some information about particular book.
+* scrapper collects data from target website, reaches endpoints, implemented
+  by us, checks existing data and depend on results, posts or updates data(information about particular book)
+  
+
+
+## Technologies used
+* [Django](https://www.djangoproject.com/): 
+* [DRF](https://www.django-rest-framework.org/): 
+* [Celery](https://docs.celeryq.dev/en/stable/)
+* [Redis](https://redis.com/solutions/use-cases/messaging/)
+
+
+
+## Installation
+* first ensure you have python globally installed in your computer. If not, you can get python [here](https://www.python.org").
+* create virtual environment
+    ```bash
+      python -m venv env
+        $ 
+    ```
+  * Then, clone this repository to your computer
+   ```bash
+    $ git clone https://github.com/NITSOMA/DjangoRestApi.git
+    ```
+
+* #### Dependencies
+  * move into cloned repository
+      ```bash
+          $ cd DjangoRestApi
+      ```
+  * activate virtual environment:
+      ```bash
+         $ source env/bin/activate
+      ```
+      #### Install the dependencies needed to run the app:
+      ```bash
+          $ pip install -r requirements.txt
+      ```
+      #### Make migrations and migrate 
+    
+      ```bash
+      $ python manage.py makemigrations
+      $ python manage.py migrate
+       ```
 
   * ### Run It
       ### keep it in mind
@@ -43,8 +99,6 @@
          http://localhost:8000/api/appraisal_request/request_id
      ```
         
-               
-
                 
             
                
