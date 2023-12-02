@@ -28,31 +28,31 @@ project consists of three component
 
   * Then, clone this repository to your computer
    ```bash
-    $ git clone https://github.com/NITSOMA/DjangoRestApi.git
+    git clone https://github.com/NITSOMA/DjangoRestApi.git
     ```
 
   * move into cloned repository
       ```bash
-          $ cd DjangoRestApi
+      cd DjangoRestApi
       ```
   * create virtual environment
     ```bash
-      $ python -m venv env
+    python -m venv env
         
     ```
   * activate virtual environment:
       ```bash
-         $ source env/bin/activate
+      source env/bin/activate
       ```
       #### Install the dependencies needed to run the app:
       ```bash
-          $ pip install -r requirements.txt
+      pip install -r requirements.txt
       ```
       #### Make migrations and migrate 
     
       ```bash
-      $ python manage.py makemigrations
-      $ python manage.py migrate
+      python manage.py makemigrations
+      python manage.py migrate
        ```
 
   * ### Run It
@@ -61,23 +61,23 @@ project consists of three component
   * each time you open new terminal need to  activate virtual environment
       ### Runserver
       ```bash
-          $ python manage.py runserver
+      python manage.py runserver
       ```
     pull redis image and run redis through docker
     ```bash
-        $ docker run -d -p 6379:6379 redis
+    docker run -d -p 6379:6379 redis
     ```
     in case you don't use docker you can run redis server 
     ```bash
-          $ redis-server
+    redis-server
     ```
     run celery worker
     ```bash
-          $ celery -A BOOKS worker --loglevel=info
+    celery -A BOOKS worker --loglevel=info
       ```
     run celery beat 
     ```bash
-        $ celery -A BOOKS beat --loglevel=info
+    celery -A BOOKS beat --loglevel=info
     ```
 
      ### You can now access the server
