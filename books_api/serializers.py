@@ -25,6 +25,8 @@ class BookSerializer(serializers.ModelSerializer):
         books = Book.objects.filter(rating__gt=book.rating)
         for i in books:
             higher_rated.append(f'{i.title} - http://127.0.0.1:8000/api/books/{i.book_id}')
+        if len(higher_rated) == 0:
+            return 'Highest Rated BOOk'
         return higher_rated
 
 
